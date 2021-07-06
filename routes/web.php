@@ -20,5 +20,3 @@ Route::get('/', function () {
 Route::view('/guru', 'guru');
 Route::view('/siswa', 'siswa');
 Route::view('/user', 'user');
-
-
