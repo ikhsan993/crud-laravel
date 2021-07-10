@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\GuruModel;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
+    public function __construct()
+    {
+        $this -> GuruModel = new GuruModel();
+    }
+
     public function index()
     {
-return view('guru');
+    $data = [
+        'guru' => $this ->GuruModel ->allData(),
+    ];
+    return view('guru', $data);
     }
 }

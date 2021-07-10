@@ -2,5 +2,11 @@
 @section('title','Guru')
 
 @section('content')
-    <h1> Ini halaman guru </h1>
+@foreach ($guru as $data)
+NIP : {{ $data['nip'] }} <br>
+NAMA : {{ $data['nama'] }} <br>
+MAPEL: {{ $data['mapel'] }} <br>
+<br>
+@endforeach
+
 @endsection
