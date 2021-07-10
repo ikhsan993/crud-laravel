@@ -8,7 +8,6 @@
               <i class="nav-icon fas fa-home"></i>
               <p>Home </p>
             </li>
-
           <li class="nav-header">HALAMAN </li>
           <li class="nav-item active">
             <a href="/guru" class="nav-link">
