@@ -22,7 +22,7 @@
                 <td>{{ $data ->mapel}}</td>
                 <td><img src="{{ url('fotoguru/'.$data->foto_guru) }}" width="100px"></td>
                 <td>
-                    <a href="" class="btn btn-sm btn-success">Detail</a>
+                    <a href="/guru/detail/{{ $data ->id_guru }}" class="btn btn-sm btn-success">Detail</a>
                     <a href="" class="btn btn-sm btn-warning">Edit</a>
                     <a href="" class="btn btn-sm btn-danger">Delete</a>
                 </td>

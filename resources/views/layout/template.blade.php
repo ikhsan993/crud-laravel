@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>@yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset ('Template/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset ('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset ('Template/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset ('dist/css/adminlte.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -60,7 +60,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="Template/index3.html" class="brand-link">
-      <img src="Template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -69,7 +69,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="Template/dist/img/ikhsan.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/ikhsan.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Amirul Ikhsan</a>
@@ -148,12 +148,12 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset ('')}}Template/plugins/jquery/jquery.min.js"></script>
+<script src="{{asset ('')}}plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset ('')}}Template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset ('')}}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="{{asset ('')}}Template/dist/js/adminlte.min.js"></script>
+<script src="{{asset ('')}}dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset ('')}}Template/dist/js/demo.js"></script>
+<script src="{{asset ('')}}dist/js/demo.js"></script>
 </body>
 </html>
