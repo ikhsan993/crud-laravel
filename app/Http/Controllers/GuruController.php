@@ -67,5 +67,55 @@ public function insert(){
    $this->GuruModel->addData($data);
    return redirect()->route('guru')->with('pesan','Data Berhasil Ditambahkan');
 }
+public function editguru($id_guru)
+{
+    if (!$this ->GuruModel ->edit($id_guru)) {
+        abort(404);
+    }
+    $data = [
+        'guru' => $this ->GuruModel ->edit($id_guru),
+    ];
+return view('editguru',$data);
+}
+public function update($id_guru){
+    Request()->validate([
+         'nip' => 'required|min:6|max:25',
+         'nama_guru' => 'required',
+         'mapel' => 'required',
+         'foto_guru' => 'mimes:jpg,bmp,png,jpeg|max:1024',
+    ],
+    [
+        'nip.required' => 'Nip Wajib Diisi!!!',
+        'nip.min' => 'Field Nip Tidak Boleh Kurang dari 6 Karakter!!!',
+        'nip.max' => 'Field Nip Tidak  Boleh Lebih Dari 25 Karakter',
+        'nama_guru.required' => 'Field Nama Wajib diisi!!!',
+        'mapel.required' => 'Field Mata Pelajaran Wajib Diisi !!!',
 
+    ]);
+
+    // Validation Ok Save Data
+    // jika upload Foto
+    if (Request() -> foto_guru) {
+        $file = Request() -> foto_guru;
+    $fileName = Request()-> nip.'.'.$file->extension();
+    $file ->move(public_path('fotoguru'),$fileName);
+    $data = [
+        'nip' => Request() ->nip,
+        'nama_guru' => Request() ->nama_guru,
+        'mapel' => Request() ->mapel,
+        'foto_guru' => $fileName
+    ];
+    }
+    //jika tidak upload foto
+    else{
+        $data = [
+            'nip' => Request() ->nip,
+            'nama_guru' => Request() ->nama_guru,
+            'mapel' => Request() ->mapel
+        ];
+    }
+
+    $this->GuruModel->editData($id_guru, $data);
+    return redirect()->route('guru')->with('pesan','Data Berhasil DiUpdate');
+ }
 }
