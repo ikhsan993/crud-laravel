@@ -16,6 +16,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
+            <th>No.</th>
             <th>NIP</th>
             <th>Nama Guru</th>
             <th>Mata Pelajaran</th>

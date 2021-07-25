@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,7 @@ use App\Http\Controllers\GuruController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home/about/{id}', [HomeController::class, 'about']);
 Route::get('/guru', [GuruController::class, 'index'])->name('guru');
+Route::get('/siswa', [SiswaController::class, 'index']);
 Route::get('/guru/detail/{id_guru}', [GuruController::class, 'detail']);
 Route::get('/guru/add', [GuruController::class, 'add']);
 Route::get('/guru/edit/{id_guru}', [GuruController::class, 'editguru']);
