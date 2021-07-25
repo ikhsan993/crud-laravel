@@ -27,4 +27,9 @@ class GuruModel extends Model
     {
         DB::table('guru')-> where('id_guru', $id_guru)->update($data);
     }
+    public function deleteData ($id_guru)
+    {
+
+        DB::table('guru')->where('id_guru', $id_guru)->delete();
+    }
 }

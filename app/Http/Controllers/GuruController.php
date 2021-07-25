@@ -118,4 +118,17 @@ public function update($id_guru){
     $this->GuruModel->editData($id_guru, $data);
     return redirect()->route('guru')->with('pesan','Data Berhasil DiUpdate');
  }
+ public function delete($id_guru)
+ {
+     // hapus foto
+    $guru =  $this ->GuruModel ->detail($id_guru);
+    if ($guru ->foto_guru <> "") {
+        unlink(public_path('fotoguru') .'/'. $guru->foto_guru);
+    }
+ $this ->GuruModel ->deleteData($id_guru);
+
+    $this ->GuruModel ->deleteData($id_guru);
+ return redirect() ->route('guru') -> with('pesan','Data Berhasil Dihapus!!!');
+
+ }
 }
