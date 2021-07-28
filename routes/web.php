@@ -25,3 +25,8 @@ Route::get('/guru/edit/{id_guru}', [GuruController::class, 'editguru']);
 Route::get('/guru/delete/{id_guru}', [GuruController::class, 'delete']);
 Route::post('/guru/insert', [GuruController::class, 'insert']);
 Route::post('/guru/update/{id_guru}', [GuruController::class, 'update']);
+Route::get('/guru/printpdf/{id}', [GuruController::class, 'printpdf']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

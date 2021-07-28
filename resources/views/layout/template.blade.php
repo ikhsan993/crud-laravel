@@ -26,7 +26,10 @@
         <a href="Template/index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
+            <button type="submit" class="btn btn-link">Logout</button>
+            @csrf
+        </form>
       </li>
     </ul>
 
@@ -64,7 +67,12 @@
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-
+        <div class="image">
+            <img src="{{asset ('')}}dist/img/ikhsan.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          </div>
       </div>
 
       <!-- SidebarSearch Form -->

@@ -25,7 +25,4 @@
         <th><img src="{{ url('fotoguru/'.$guru->foto_guru) }}"width="300px"></th>
     </tr>
 </table>
-<a href="/guru" class="btn btn-success btn">Kembali</a>
-<button class="btn btn-primary" onclick="window.print()">Cetak</button>
-<a href="/guru/printpdf/{{ $guru->id_guru }}" class="btn btn-primary ">Cetak PDF</a>
 @endsection

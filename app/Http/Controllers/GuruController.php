@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 use App\Models\GuruModel;
 use Illuminate\Http\Request;
+use Dompdf\Dompdf;
 
 class GuruController extends Controller
 {
     public function __construct()
     {
         $this -> GuruModel = new GuruModel();
+        $this->middleware('auth');
     }
 
     public function index()
@@ -130,5 +132,23 @@ public function update($id_guru){
     $this ->GuruModel ->deleteData($id_guru);
  return redirect() ->route('guru') -> with('pesan','Data Berhasil Dihapus!!!');
 
+ }
+ public function printpdf($id_guru){
+    $data = [
+        'guru' => $this ->GuruModel ->detail($id_guru),
+    ];
+    $cetak = view('printpdf', $data);
+    // instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml($cetak);
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
  }
 }
