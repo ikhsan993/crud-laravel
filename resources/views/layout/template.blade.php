@@ -72,6 +72,16 @@
           </div>
           <div class="info">
             <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+        <p class="text-light">@if (auth()->user()->level==1)
+               Admin
+               @elseif (auth()->user()->level==2)
+                Guru
+
+               @elseif (auth()->user()->level==3)
+                Siswa
+
+            @endif
+        </p>
           </div>
       </div>
 
